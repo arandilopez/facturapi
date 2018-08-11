@@ -20,22 +20,22 @@ module Facturapi
 
       def retrieve(id)
         response = client.get(resource_url(id))
-        self.new response['data']
+        self.new response
       end
 
       def create(payload = {})
         response = client.post(resource_url, payload)
-        self.new response['data']
+        self.new response
       end
 
       def update(id, payload = {})
         response = client.put(resource_url(id), payload)
-        self.new response['data']
+        self.new response
       end
 
       def delete(id)
         response = client.delete(resource_url(id))
-        self.new response['data']
+        self.new response
       end
 
       protected
