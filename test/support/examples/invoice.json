@@ -1,0 +1,24 @@
+{
+  "id": "58e93bd8e86eb318b019743d",
+  "created_at": "2017-01-01T14:00:08.000Z",
+  "livemode": false,
+  "status": "valid",
+  "customer": {
+    "id": "58e93bd8e86eb318b0197456",
+    "legal_name": "Bimbo de México S.A. de C.V.",
+    "tax_id": "MESB900314R87"
+  },
+  "total": 10944.82,
+  "uuid": "39c85a3f-275b-4341-b259-e8971d9f8a94",
+  "folio_number": 914,
+  "series": "A",
+  "payment_form": "06",
+  "items": [{
+    "quantity": 2,
+    "discount": 0,
+    "product": {
+      "id": "58e93bd8e86eb318b0197454",
+      "description": "Gafas de sol Ray-Ban"
+    }
+    }]
+  }

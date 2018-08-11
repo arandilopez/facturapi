@@ -15,7 +15,7 @@ class HttpClientTest < Minitest::Test
     client = Facturapi::HttpClient.new
     response = Minitest::Mock.new
     response.expect :body, invoices_response
-    RestClient.stub :get, response do
+    mock_response :get, with: response do
       result = client.get("https://www.facturapi.io/v1/invoices")
       refute_nil result['data']
     end
