@@ -4,7 +4,7 @@ module Facturapi
     attr_reader :api_url
     def initialize
       @api_key = nil
-      @api_url = "https://www.facturapi.io/"
+      @api_url = "https://www.facturapi.io"
       @api_version = "v1"
     end
   end
