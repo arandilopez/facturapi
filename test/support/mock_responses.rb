@@ -1,6 +1,6 @@
 module Facturapi
-  module JSONResponses
-    def mock_response(method, with:, &block)
+  module MockResponses
+    def mock_response_for(method = :get, with: {}, &block)
       RestClient.stub(method, with, &block)
     end
 
