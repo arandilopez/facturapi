@@ -7,7 +7,9 @@ module Facturapi
     attr_reader :response
     def initialize
       @headers = {
-        Authorization: authorization_value
+        Authorization: authorization_value,
+        accept: :json,
+        content_type: :json
       }
       @response = nil
     end
@@ -18,19 +20,18 @@ module Facturapi
     end
 
     def post(url, payload = {})
-      @response = RestClient.post(url, payload, headers) rescue nil
+      @response = RestClient.post(url, payload.to_json, headers) rescue nil
       parsed_body(@response.body)
-
     end
 
     def put(url, payload ={})
-      @response = RestClient.put(url, payload, headers) rescue nil
+      @response = RestClient.put(url, payload.to_json, headers) rescue nil
       parsed_body(@response.body)
 
     end
 
     def delete(url)
-      @response = RestClient.delete(url) rescue nil
+      @response = RestClient.delete(url, headers) rescue nil
       parsed_body(@response.body)
     end
 
