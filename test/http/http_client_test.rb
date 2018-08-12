@@ -7,7 +7,7 @@ class HttpClientTest < Minitest::Test
   def test_it_raise_api_not_found_error
     Facturapi.configuration.api_key = nil
     assert_raises Facturapi::ApiKeyNotFoundError do
-      client = Facturapi::HttpClient.new
+      Facturapi::HttpClient.new
     end
   end
 
