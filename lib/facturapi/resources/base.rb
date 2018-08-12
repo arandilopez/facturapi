@@ -3,12 +3,12 @@ require "ostruct"
 module Facturapi
   class Base < OpenStruct
     def update(attributes = {})
-      return false if self.try(:id).nil?
+      return false if self.id.nil?
       self.class.update(self.id, attributes)
     end
 
     def delete!
-      return false if self.try(:id).nil?
+      return false if self.id.nil?
       self.class.delete(self.id)
     end
 
