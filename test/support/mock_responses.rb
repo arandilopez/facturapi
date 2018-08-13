@@ -4,6 +4,14 @@ module Facturapi
       RestClient.stub(method, with, &block)
     end
 
+    def customer_response
+      File.read "test/support/examples/customer.json"
+    end
+
+    def customers_response
+      File.read "test/support/examples/customers.json"
+    end
+
     def invoices_response
       File.read "test/support/examples/invoices.json"
     end

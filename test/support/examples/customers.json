@@ -1,0 +1,19 @@
+{
+  "page": 1,
+  "total_pages": 1,
+  "data": [
+    {
+      "id": "590ce6c56d04f840aa8438af",
+      "created_at": "2017-05-05T20:55:33.468Z",
+      "livemode": false,
+      "legal_name": "John Doe",
+      "email": "email@example.com",
+      "tax_id": "ABCD111111ABC",
+      "address": {
+        "zip": "12345",
+        "street": "Sunset Blvd",
+        "country": "México"
+      }
+    }
+  ]
+}
