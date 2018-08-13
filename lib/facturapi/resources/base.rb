@@ -19,11 +19,13 @@ module Facturapi
         response = client.get(resource_url, params)
         response['data'].map { |e| self.new e }
       end
+      alias_method :get, :all
 
       def retrieve(id)
         response = client.get(resource_url(id))
         self.new response
       end
+      alias_method :find, :retrieve
 
       def create(payload = {})
         response = client.post(resource_url, payload)
