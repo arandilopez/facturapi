@@ -15,8 +15,8 @@ module Facturapi
     class << self
       attr_accessor :endpoint
 
-      def all
-        response = client.get(resource_url)
+      def all(params = {})
+        response = client.get(resource_url, params)
         response['data'].map { |e| self.new e }
       end
 
