@@ -13,6 +13,8 @@ module Facturapi
     end
 
     class << self
+      attr_accessor :endpoint
+
       def all
         response = client.get(resource_url)
         response['data'].map { |e| self.new e }
@@ -38,14 +40,12 @@ module Facturapi
         self.new response
       end
 
-      protected
-      attr_accessor :endpoint
-      def resource_url(*extras)
-        @resource_url ||= URIBuilder.build(endpoint, *extras)
-      end
-
       def client
         @client ||= HttpClient.new
+      end
+
+      def resource_url(*extras)
+        URIBuilder.build(endpoint, *extras)
       end
     end
   end

@@ -6,22 +6,26 @@ module Facturapi
 
     def send_by_email!
       return false if self.id.nil?
-      self.class.client.post(resource_url(self.id, "email"))
+      url = self.class.resource_url(self.id, "email")
+      self.class.client.post(url)
     end
 
     def download_zip!
       return false if self.id.nil?
-      self.class.client.get(resource_url(self.id, "zip"))
+      url = self.class.resource_url(self.id, "zip")
+      self.class.client.get(url, {}, {accept: :zip})
     end
 
     def download_xml!
       return false if self.id.nil?
-      self.class.client.get(resource_url(self.id, "xml"))
+      url = self.class.resource_url(self.id, "xml")
+      self.class.client.get(url, {}, {accept: :xml})
     end
 
     def download_pdf!
       return false if self.id.nil?
-      self.class.client.get(resource_url(self.id, "pdf"))
+      url = self.class.resource_url(self.id, "pdf")
+      self.class.client.get(url, {}, {accept: :pdf})
     end
 
     def cancel!
