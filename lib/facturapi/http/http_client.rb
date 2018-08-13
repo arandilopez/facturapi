@@ -14,8 +14,9 @@ module Facturapi
       @response = nil
     end
 
-    def get(url, payload = {})
-      @response = RestClient.get(url, headers(params: payload)) rescue nil
+    def get(url, payload = {}, headers = {})
+      headers[:params] = payload
+      @response = RestClient.get(url, headers(headers)) rescue nil
       parsed_body(@response.body)
     end
 
