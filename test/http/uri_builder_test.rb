@@ -20,5 +20,11 @@ class URIBuilderTest < Minitest::Test
     id = "7g6f76f5512653t756r"
     url = Facturapi::URIBuilder.build(@endpoint, id, 'zip')
     assert_equal "https://www.facturapi.io/v1/invoices/7g6f76f5512653t756r/zip", url
+
+    url = Facturapi::URIBuilder.build(@endpoint, id, 'xml')
+    assert_equal "https://www.facturapi.io/v1/invoices/7g6f76f5512653t756r/xml", url
+
+    url = Facturapi::URIBuilder.build(@endpoint, id, 'pdf')
+    assert_equal "https://www.facturapi.io/v1/invoices/7g6f76f5512653t756r/pdf", url
   end
 end
