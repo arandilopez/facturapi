@@ -46,6 +46,7 @@ class InvoiceTest < Minitest::Test
           }
         ],
         :payment_form => Facturapi::Invoice::PaymentForm::EFECTIVO,
+        :payment_method => Facturapi::Invoice::PaymentMethod::PARCIALIDADES,
         :folio_number => "581",
         :series => "F"
       })

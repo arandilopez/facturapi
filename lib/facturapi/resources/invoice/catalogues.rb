@@ -29,6 +29,11 @@ module Facturapi
       POR_DEFINIR = '99';
     end
 
+    module PaymentMethod
+      UNA_EXHIBICION = "PUE"
+      PARCIALIDADES = "PDD"
+    end
+
     module TaxType
       IVA = 'IVA';
       IEPS = 'IEPS';
