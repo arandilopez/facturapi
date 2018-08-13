@@ -45,6 +45,7 @@ invoice = Facturapi::Invoice.create({
 invoice.send_by_email!
 
 # Or download it
+Dir.mkdir "tmp" unless File.exist? "tmp"
 File.open("tmp/#{invoice.id}.zip", "w") do |f|
   f.write invoice.download_zip!
 end
