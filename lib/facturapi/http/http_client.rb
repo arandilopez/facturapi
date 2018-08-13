@@ -48,7 +48,7 @@ module Facturapi
     end
 
     def parsed_body(body)
-      JSON.parse body
+      JSON.parse body rescue body
     end
   end
 end
