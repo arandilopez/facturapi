@@ -1,6 +1,6 @@
 module Facturapi
   class ApiKeyNotFoundError < StandardError
-    def initialize(msg = "Add your api key in a intializer")
+    def initialize(msg = "Facturapi key is missing. Add your api key in a initializer")
       super
     end
   end
